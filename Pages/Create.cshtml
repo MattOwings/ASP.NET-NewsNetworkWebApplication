@@ -1,0 +1,54 @@
+﻿@page
+@model FinalProject_BloggingNewsSite.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FinalProject_BloggingNewsSiteModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Title" class="control-label"></label>
+                <input asp-for="FinalProject_BloggingNewsSiteModel.Title" class="form-control" />
+                <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Author" class="control-label"></label>
+                <input asp-for="FinalProject_BloggingNewsSiteModel.Author" class="form-control" />
+                <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Date" class="control-label"></label>
+                <input asp-for="FinalProject_BloggingNewsSiteModel.Date" class="form-control" />
+                <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Body" class="control-label"></label>
+                <input asp-for="FinalProject_BloggingNewsSiteModel.Body" class="form-control" />
+                <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Link" class="control-label"></label>
+                <input asp-for="FinalProject_BloggingNewsSiteModel.Link" class="form-control" />
+                <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Link" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,52 @@
+﻿@page
+@model FinalProject_BloggingNewsSite.Pages.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FinalProject_BloggingNewsSiteModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel.Author)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Author)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel.Body)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Body)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel.Link)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Link)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="FinalProject_BloggingNewsSiteModel.ItemID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
