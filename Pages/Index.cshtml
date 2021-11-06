@@ -5,7 +5,52 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<style>
+    #main-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .flex-item {
+        font-size: 1.5rem;
+        width: 400px;
+        text-align: center;
+        border: 4px solid #808080;
+        margin: 15px;
+        padding: 5px;
+        background-color: rgb(65 65 65);
+        color: rgb(211,211,211);
+        border-radius: 25px;
+        transition: 0.5s;
+    }
+    .flex-item:hover {
+       border: 4px solid red;
+    }
+    .flex-item a {
+        color: white;
+        text-decoration: none;
+    }
+</style>
+
+<h1 class="light-text">Main Page</h1>
+
+<div id="main-content" class="flex">
+    @foreach (var item in Model.FinalProject_BloggingNewsSiteModel)
+        {
+            <div class="flex-item">
+                <a asp-page="./Details" asp-route-id="@item.ItemID">
+                    <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+                    <p>@Html.DisplayFor(modelItem => item.Author)</p>
+                    <p>@Html.DisplayFor(modelItem => item.Date)</p>
+                </a>
+            </div>
+        }
+    </div>
+
+
+
+
+
 
 <p>
     <a asp-page="Create">Create New</a>
