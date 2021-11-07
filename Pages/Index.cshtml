@@ -6,7 +6,7 @@
 }
 
 <style>
-    #main-content {
+    .main-content {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -26,6 +26,17 @@
     .flex-item:hover {
        border: 4px solid red;
     }
+    .top-header {
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+        border: 4px solid #808080;
+        margin: 15px;
+        padding: 25px;
+        background-color: rgb(65 65 65);
+        color: rgb(211,211,211);
+        border-radius: 25px;
+    }
     .flex-item a {
         color: white;
         text-decoration: none;
@@ -34,73 +45,23 @@
 
 <h1 class="light-text">Main Page</h1>
 
-<div id="main-content" class="flex">
-    @foreach (var item in Model.FinalProject_BloggingNewsSiteModel)
-        {
-            <div class="flex-item">
-                <a asp-page="./Details" asp-route-id="@item.ItemID">
-                    <h1><i>@Html.DisplayFor(modelItem => item.Title)</i></h1>
-                    <p>By: @Html.DisplayFor(modelItem => item.Author)</p>
-                    <p>@Html.DisplayFor(modelItem => item.Date)</p>
-                    <p>@Html.DisplayFor(modelItem => item.Summary)</p>
-                </a>
-            </div>
-        }
+<div class="main-content">
+    <div class="top-header">
+        <h1>Owings News Network</h1>
     </div>
+</div>
 
-
-
-
-
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel[0].Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel[0].Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel[0].Body)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FinalProject_BloggingNewsSiteModel[0].Link)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.FinalProject_BloggingNewsSiteModel) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Link)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ItemID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ItemID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ItemID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="main-content flex">
+    @foreach (var item in Model.FinalProject_BloggingNewsSiteModel)
+     {
+        <div class="flex-item">
+                
+            <a asp-page="./Details" asp-route-id="@item.ItemID">
+                <h1><i>@Html.DisplayFor(modelItem => item.Title)</i></h1>
+                <p>By: @Html.DisplayFor(modelItem => item.Author)</p>
+                <p>@Html.DisplayFor(modelItem => item.Date)</p>
+                <p>@Html.DisplayFor(modelItem => item.Summary)</p>
+            </a>
+        </div>
+     }
+</div>

@@ -9,12 +9,48 @@
     * {
         color: #dedede;
     }
+    .center-text {
+        text-align: center;
+    }
+    .home {
+        text-decoration: underline;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .body-text {
+        font-size: 22px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .bottom-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    }
 </style>
 
-<h1>Details</h1>
 
 <div>
-    <h4>FinalProject_BloggingNewsSiteModel</h4>
+    <h1 class="center-text"><i>@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Title)</i></h1>
+    <h2 class="center-text">By <i>@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Author)</i></h2>
+    <h2 class="center-text">@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Date)</h2>
+    <p class="body-text">@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Body)</p>
+    <h2 class="center-text">For more, visit @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Link)</h2>
+    <div class="bottom-links">
+        <h1 class="center-text"><a class="home" asp-page="./Index">Back to Homepage</a></h1>
+        <h1 class="center-text"><a class="home" asp-page="./Edit" asp-route-id="@Model.FinalProject_BloggingNewsSiteModel.ItemID">Edit this Listing</a></h1>
+    </div>
+    
+
+</div>
+
+
+
+<!--
+<div>
+    <h1>FinalProject_BloggingNewsSiteModel</h1>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -48,7 +84,7 @@
             @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Link)
         </dd>
     </dl>
-</div>
+</div> -->
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.FinalProject_BloggingNewsSiteModel.ItemID">Edit</a> |
     <a asp-page="./Index">Back to List</a>

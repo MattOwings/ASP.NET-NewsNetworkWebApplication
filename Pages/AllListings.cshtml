@@ -1,17 +1,17 @@
 ﻿@page
-@model FinalProject_BloggingNewsSite.Pages.RequestAnEditModel
+@model FinalProject_BloggingNewsSite.Pages.AllListingsModel
 
 @{
-    ViewData["Title"] = "RequestAnEdit";
+    ViewData["Title"] = "AllListings";
 }
 
 <style>
     * {
-        color: #dedede;
+        color: white;
     }
 </style>
 
-<h1>Edit an Existing Entry</h1>
+<h1>View All Entries</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -50,9 +50,7 @@
                 @Html.DisplayFor(modelItem => item.Summary)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ItemID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ItemID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ItemID">Delete</a>
+                <a asp-page="./Details" asp-route-id="@item.ItemID">Details</a>
             </td>
         </tr>
 }
