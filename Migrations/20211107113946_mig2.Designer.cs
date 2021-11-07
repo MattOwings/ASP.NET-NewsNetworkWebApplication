@@ -3,14 +3,16 @@ using FinalProject_BloggingNewsSite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FinalProject_BloggingNewsSite.Migrations
 {
     [DbContext(typeof(FinalProject_BloggingNewsSiteContext))]
-    partial class FinalProject_BloggingNewsSiteContextModelSnapshot : ModelSnapshot
+    [Migration("20211107113946_mig2")]
+    partial class mig2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

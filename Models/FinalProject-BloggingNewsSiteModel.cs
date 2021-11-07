@@ -18,6 +18,8 @@ namespace FinalProject_BloggingNewsSite.Models
         public string Date { get; set; }
         [Required(ErrorMessage = "Enter the Body text of the Work")]
         public string Body { get; set; }
+        [Required(ErrorMessage = "Provide a Short Summary of the Work")]
+        public string Summary { get; set; }
         public string Link { get; set; }
 
     }
