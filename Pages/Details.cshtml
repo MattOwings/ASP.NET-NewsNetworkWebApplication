@@ -37,7 +37,7 @@
     <h2 class="center-text">By <i>@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Author)</i></h2>
     <h2 class="center-text">@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Date)</h2>
     <p class="body-text">@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Body)</p>
-    <h2 class="center-text">For more, visit @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Link)</h2>
+    <h2 class="center-text">For more, visit <a href=@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Link)>@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Link)</a></h2>
     <div class="bottom-links">
         <h1 class="center-text"><a class="home" asp-page="./Index">Back to Homepage</a></h1>
         <h1 class="center-text"><a class="home" asp-page="./Edit" asp-route-id="@Model.FinalProject_BloggingNewsSiteModel.ItemID">Edit this Listing</a></h1>
