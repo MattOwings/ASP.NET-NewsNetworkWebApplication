@@ -9,10 +9,72 @@
     * {
         color: #dedede;
     }
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .flex-item {
+        border: 2px solid #dedede;
+        border-radius: 25px;
+        width: 100%;
+        margin-top: 1rem;
+        background-color: #121212;
+    }
+    .flex-item h1 {
+        font-size: 35px;
+        font-style: italic;
+    }
+    .flex-item h2 {
+        font-size: 25px;
+    }
+    .flex-in-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+    .flex-first {
+        width: 75%;
+        text-align: center;
+    }
+    .flex-second {
+        margin: auto;
+        text-align: center;
+        justify-content: left;
+    }
+    .flex-second a {
+        text-decoration: none;
+        font-size: 35px;
+        color: white;
+    }
 </style>
 
 <h1>Edit an Existing Entry</h1>
 
+
+<div class="flex">
+    @foreach (var item in Model.FinalProject_BloggingNewsSiteModel)
+            {
+                <div class="flex-item">
+                    <div class="flex-in-flex">
+                        <div class="flex-first">
+                            <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+                            <h2>By @Html.DisplayFor(modelItem => item.Author) on @Html.DisplayFor(modelItem => item.Date)</h2>
+                        </div>
+                        <div class="flex-second">
+                            <a asp-page="./Edit" asp-route-id="@item.ItemID">[ <u>Edit this Entry</u> ]</a>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            }
+
+    </div>
+
+
+
+<!--
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -58,3 +120,4 @@
 }
     </tbody>
 </table>
+    -->
