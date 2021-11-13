@@ -9,8 +9,83 @@
     * {
         color: #dedede;
     }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .flex-item {
+        border: 2px solid #dedede;
+        border-radius: 25px;
+        width: 100%;
+        margin-top: 1rem;
+        background-color: #121212;
+    }
+
+        .flex-item h1 {
+            font-size: 35px;
+            font-style: italic;
+        }
+
+        .flex-item h2 {
+            font-size: 25px;
+        }
+
+    .flex-in-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+    .flex-first {
+        width: 100%;
+        text-align: center;
+    }
+    .flex-first p {
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    .flex-second {
+        margin-top: 35px;
+        text-align: center;
+        justify-content: left;
+    }
+
+        .flex-second a {
+            font-size: 25px;
+            margin-left: 35px;
+        }
+        .flex-second input {
+            font-size: 25px;
+        }
 </style>
 
+<h1>Are you sure you want to delete: </h1>
+
+
+<div class="flex">
+        <div class="flex-item">
+            <div class="flex-in-flex">
+                <div class="flex-first">
+                    <h1>@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Title)</h1>
+                    <h2>By @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Author) on @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Date)</h2>
+                    <p>@Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Summary)</p>
+                </div>
+            </div>
+        </div>
+</div>
+
+<form method="post" class="flex-second">
+    <input type="hidden" asp-for="FinalProject_BloggingNewsSiteModel.ItemID" />
+    <input type="submit" value="Permanently Delete" class="btn btn-danger" />
+    <a class="btn btn-primary" asp-page="./Index">Return Home</a>
+</form>
+
+
+<!--
 <h1>Delete</h1>
 
 <h3>Are you sure you want to delete this?</h3>
@@ -37,10 +112,10 @@
             @Html.DisplayFor(model => model.FinalProject_BloggingNewsSiteModel.Date)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="FinalProject_BloggingNewsSiteModel.ItemID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-page="./Index">Return Home</a>
     </form>
-</div>
+</div> -->

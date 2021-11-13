@@ -15,11 +15,11 @@
         font-size: 1.5rem;
         width: 475px;
         text-align: center;
-        border: 4px solid #808080;
+        border: 4px solid #dedede;
         margin: 15px;
         padding: 25px;
-        background-color: rgb(65 65 65);
-        color: rgb(211,211,211);
+        background-color: #121212;
+        color: #dedede;
         border-radius: 25px;
         transition: 0.5s;
     }
@@ -30,10 +30,10 @@
         font-size: 1.5rem;
         width: 100%;
         text-align: center;
-        border: 4px solid #808080;
+        border: 4px solid #dedede;
         margin: 15px;
         padding: 10px;
-        background-color: rgb(65 65 65);
+        background-color: #121212;
         color: rgb(211,211,211);
         border-radius: 25px;
     }
@@ -42,8 +42,11 @@
         color: #dedede;
     }
     .flex-item a {
-        color: white;
+        color: #dedede;
         text-decoration: none;
+    }
+    .flex-item a hr {
+        border-top: 3px solid #dedede;
     }
 </style>
 
@@ -61,8 +64,9 @@
                 
             <a asp-page="./Details" asp-route-id="@item.ItemID">
                 <h1><i>@Html.DisplayFor(modelItem => item.Title)</i></h1>
-                <p>By: @Html.DisplayFor(modelItem => item.Author)</p>
+                <p style="margin-bottom: 0;">By: @Html.DisplayFor(modelItem => item.Author)</p>
                 <p>@Html.DisplayFor(modelItem => item.Date)</p>
+                <hr />
                 <p>@Html.DisplayFor(modelItem => item.Summary)</p>
             </a>
         </div>

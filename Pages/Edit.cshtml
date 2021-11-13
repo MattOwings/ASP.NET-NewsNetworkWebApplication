@@ -9,6 +9,15 @@
     * {
         color: #dedede;
     }
+    .form-control {
+        width: 350%;
+        font-size: 20px;
+        background-color: #dedede;
+    }
+
+    .control-label {
+        font-size: 25px;
+    }
 </style>
 
 <h1>Edit An Entry</h1>
@@ -17,46 +26,42 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="FinalProject_BloggingNewsSiteModel.ItemID" />
             <div class="form-group">
-                <label asp-for="FinalProject_BloggingNewsSiteModel.Title" class="control-label"></label>
-                <input asp-for="FinalProject_BloggingNewsSiteModel.Title" class="form-control" />
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Title" class="control-label">Enter a Title</label>
+                <input placeholder="Enter a short title that describes the work" maxlength="50" autofocus asp-for="FinalProject_BloggingNewsSiteModel.Title" class="form-control" />
                 <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FinalProject_BloggingNewsSiteModel.Author" class="control-label"></label>
-                <input asp-for="FinalProject_BloggingNewsSiteModel.Author" class="form-control" />
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Author" class="control-label">Enter the Authors</label>
+                <input placeholder="First M Last, First M Last, ... , et al." maxlength="50" asp-for="FinalProject_BloggingNewsSiteModel.Author" class="form-control" />
                 <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Author" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FinalProject_BloggingNewsSiteModel.Date" class="control-label"></label>
-                <input asp-for="FinalProject_BloggingNewsSiteModel.Date" class="form-control" />
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Date" class="control-label">Enter a Date</label>
+                <input placeholder="Month Day, Year" maxlength="35" asp-for="FinalProject_BloggingNewsSiteModel.Date" class="form-control" />
                 <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FinalProject_BloggingNewsSiteModel.Body" class="control-label"></label>
-                <input asp-for="FinalProject_BloggingNewsSiteModel.Body" class="form-control" />
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Body" class="control-label">Enter the Full Body of the Work</label>
+                <textarea rows="15" placeholder="The entire work goes here" asp-for="FinalProject_BloggingNewsSiteModel.Body" class="form-control"></textarea>
                 <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Body" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FinalProject_BloggingNewsSiteModel.Summary" class="control-label"></label>
-                <input asp-for="FinalProject_BloggingNewsSiteModel.Summary" class="form-control" />
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Summary" class="control-label">Enter a Short Summary</label>
+                <input placeholder="Short summary describing the work" maxlength="100" asp-for="FinalProject_BloggingNewsSiteModel.Summary" class="form-control" />
                 <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Summary" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FinalProject_BloggingNewsSiteModel.Link" class="control-label"></label>
-                <input asp-for="FinalProject_BloggingNewsSiteModel.Link" class="form-control" />
+                <label asp-for="FinalProject_BloggingNewsSiteModel.Link" class="control-label">Enter a Valid Link URL</label>
+                <input placeholder="Full link including http, example: https://www.youtube.com/" asp-for="FinalProject_BloggingNewsSiteModel.Link" class="form-control" />
                 <span asp-validation-for="FinalProject_BloggingNewsSiteModel.Link" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input style="font-size: 25px; margin-right: 35px;" type="submit" value="Apply Edits" class="btn btn-warning" />
+                <a style="font-size: 25px;" class="btn btn-primary" asp-page="Index">Cancel</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {
